@@ -169,6 +169,8 @@ public class MailSender{
         Mail mail;
         Body body;
         
+        Color sendBackground;
+        
         public Butt(Mail mail,Body body) {
             this.mail=mail;
             this.body=body;
@@ -179,6 +181,8 @@ public class MailSender{
             
             reset=new JButton("Reset");
             send=new JButton("Send");
+            
+            sendBackground=send.getBackground();
             
             reset.addActionListener(new ActionListener() {
 
@@ -191,6 +195,7 @@ public class MailSender{
                     
                     body._body.setText("");
                     body.selectedAttachment.removeAllItems();
+                    send.setBackground(sendBackground);
                 }
             });
             
